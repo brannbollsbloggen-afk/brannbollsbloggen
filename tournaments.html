@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{{ name }} Tournament</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+    <h2>Matches in {{ name }}</h2>
+    <ul>
+        {% for a, b, result in matches %}
+        <li>{{ a }} vs {{ b }} - Result: {{ result }}</li>
+        {% endfor %}
+    </ul>
+    <a href="/">Back</a>
+</body>
+</html>

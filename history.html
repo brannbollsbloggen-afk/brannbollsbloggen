@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{{ team }} History</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+    <h2>Match History for {{ team }}</h2>
+    <ul>
+        {% for opponent, result, rating in matches %}
+        <li>vs {{ opponent }} - Result: {{ result }} - Rating: {{ rating }}</li>
+        {% endfor %}
+    </ul>
+    <a href="/">Back</a>
+</body>
+</html>

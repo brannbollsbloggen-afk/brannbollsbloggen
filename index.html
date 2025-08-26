@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Elo Ratings</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+    <h2>Elo Ratings</h2>
+    <form action="/add_match" method="post">
+        Team A: <input name="team_a"><br>
+        Team B: <input name="team_b"><br>
+        Result: <select name="result">
+            <option value="A">Team A wins</option>
+            <option value="B">Team B wins</option>
+            <option value="D">Draw</option>
+        </select><br>
+        Tournament: <input name="tournament"><br>
+        <button type="submit">Add Match</button>
+    </form>
+    <ul>
+        {% for team, rating in ratings.items() %}
+        <li>{{ team }}: {{ rating|round(2) }} - <a href="/history/{{ team }}">History</a></li>
+        {% endfor %}
+    </ul>
+    <a href="/plot">View Rating Plot</a>
+</body>
+</html>
